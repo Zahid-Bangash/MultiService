@@ -17,7 +17,7 @@ export default function MainWrapper() {
     <div className="d-flex flex-column min-vh-100">
       <Navbar />
       <ToastContainer position="top-center" autoClose={3000} />
-      <main className="flex-grow-1 bg-white" style={{ marginTop: "74.48px" }}>
+      <main className="flex-grow-1 bg-white" style={{ marginTop: "67.59px" }}>
         <Outlet />
         <BackToTopButton />
       </main>

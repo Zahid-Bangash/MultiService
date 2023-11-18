@@ -1,5 +1,5 @@
 //import React, { useContext, useState, useEffect, useRef } from "react";
-import { Link, Navlink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 //import { signOut } from "firebase/auth";
 //import { auth } from "../configuration/firebase-config";
 //import { Context } from "./ContextProvider";
@@ -67,7 +67,9 @@ export default function Navbar() {
     >
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          <h3>Multiservice</h3>
+          <h3 style={{ fontWeight: "600" }}>
+            Multi<span style={{ fontWeight: "400" }}>service</span>
+          </h3>
         </Link>
         <button
           className="navbar-toggler"
@@ -101,27 +103,27 @@ export default function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-start flex-grow-1 pe-3">
               <li className="nav-item" data-bs-dismiss="offcanvas">
-                <Link
+                <NavLink
                   className="nav-link fw-bold"
                   aria-current="page"
                   to="/home"
                 >
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item" data-bs-dismiss="offcanvas">
-                <Link
+                <NavLink
                   className="nav-link fw-bold"
                   aria-current="page"
                   to="/set-up-my-business"
                 >
                   Set Up My Business
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item" data-bs-dismiss="offcanvas">
-                <Link className="nav-link fw-bold" to="/contact">
+                <NavLink className="nav-link fw-bold" to="/contact">
                   Contact
-                </Link>
+                </NavLink>
               </li>
             </ul>
             {/*{user?.emailVerified ? (
@@ -188,16 +190,16 @@ export default function Navbar() {
 
             <div className="right d-flex align-items-center">
               <div data-bs-dismiss="offcanvas">
-                <Link
+                <NavLink
                   className={({ isActive }) =>
                     isActive
-                      ? "login fw-bold me-4 cursor-pointer text-decoration-none loginButtonActive"
-                      : "login fw-bold me-4 cursor-pointer text-decoration-none"
+                      ? "registerButton fw-bold me-4 cursor-pointer text-decoration-none registerButtonActive"
+                      : "registerButton fw-bold me-4 cursor-pointer text-decoration-none"
                   }
                   to="/register"
                 >
                   Register
-                </Link>
+                </NavLink>
               </div>
               <div data-bs-dismiss="offcanvas">
                 <Link to="/login" className="text-decoration-none">
