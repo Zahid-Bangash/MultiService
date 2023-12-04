@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AppleIcon from "@mui/icons-material/Apple";
+import googlePlay from "../assets/google_play.svg";
 
 export default function Footer() {
   return (
@@ -50,9 +51,11 @@ export default function Footer() {
                 style={{ border: "1px solid white", borderRadius: "10px" }}
               >
                 <div className="d-flex align-items-center">
-                  <AppleIcon
+                  <img
+                    src={googlePlay}
+                    alt="google-play"
                     className="me-2"
-                    style={{ width: "40px", height: "40px" }}
+                    style={{ width: "40px", height: "40px",  }}
                   />
                   <div>
                     <div style={{ fontSize: "12px", fontWeight: "400" }}>

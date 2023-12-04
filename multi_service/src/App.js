@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
+import ProvidersList from "./pages/ProvidersList";
 //import Loading from "../src/components/Loading";
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
         },
         {
           path: "/home",
-          element: <Home />,
+          element: <ProvidersList />,
         },
 
         {
