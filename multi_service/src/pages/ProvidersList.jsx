@@ -1,7 +1,106 @@
-import React from 'react'
+import React from "react";
+
+import Provider from "../components/Provider";
+import Filter from "../components/Filter";
+
+import provider1 from "../assets/provider1.png";
+import provider2 from "../assets/provider2.png";
+import provider3 from "../assets/provider3.png";
 
 export default function ProvidersList() {
+  const providers = [
+    {
+      img: provider1,
+      name: "Marks Philips",
+      profession: "Electrician",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+    {
+      img: provider2,
+      name: "Balqees Ahmad Fathi",
+      profession: "Home Cleaner",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+    {
+      img: provider3,
+      name: "Hussain Al Jasmi",
+      profession: "Electrician",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+    {
+      img: provider1,
+      name: "Marks Philips",
+      profession: "Electrician",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+    {
+      img: provider2,
+      name: "Balqees Ahmad Fathi",
+      profession: "Home Cleaner",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+    {
+      img: provider1,
+      name: "Hussain Al Jasmi",
+      profession: "Electrician",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+    {
+      img: provider1,
+      name: "Marks Philips",
+      profession: "Electrician",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+    {
+      img: provider2,
+      name: "Balqees Ahmad Fathi",
+      profession: "Home Cleaner",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+    {
+      img: provider3,
+      name: "Hussain Al Jasmi",
+      profession: "Electrician",
+      stars: "5.0",
+      totalReviews: 20,
+    },
+  ];
   return (
-    <div>ProvidersList</div>
-  )
+    <div style={{ backgroundColor: "#F7F7F7" }}>
+      <div className="bg-dark">
+        <div className="container py-5">
+          <h2 style={{ fontWeight: "600", color: "white" }}>Providers List</h2>
+        </div>
+      </div>
+      <div className="container py-5">
+        <div className="row">
+          <div className="col-12 col-lg-4">
+            <Filter />
+          </div>
+          <div className="col-12 col-lg-8">
+            <div className="providers row">
+              {providers.map((provider, index) => (
+                <Provider
+                  key={index}
+                  img={provider.img}
+                  name={provider.name}
+                  profession={provider.profession}
+                  stars={provider.stars}
+                  totalReviews={provider.totalReviews}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -46,6 +46,9 @@ code {
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     font-weight: "500";
     transition: background-color 0.3s ease;
@@ -60,6 +63,9 @@ code {
     background-color: white;
     padding: 10px 20px;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     font-weight: "500";
     border: 1px solid #4c40ed;
@@ -105,6 +111,16 @@ code {
 
 .back-to-top:hover {
     background-color: #262357;
+}
+
+.custom-pagination .MuiPaginationItem-root.Mui-selected {
+    background-color: #FBB439;
+    color: #fff;
+}
+
+.custom-pagination .MuiPaginationItem-root.Mui-selected:hover {
+    background-color: #e6a605;
+    color: #fff;
 }
 
 /* .......................................................................................................... */

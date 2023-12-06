@@ -55,7 +55,7 @@ export default function Footer() {
                     src={googlePlay}
                     alt="google-play"
                     className="me-2"
-                    style={{ width: "40px", height: "40px",  }}
+                    style={{ width: "40px", height: "40px" }}
                   />
                   <div>
                     <div style={{ fontSize: "12px", fontWeight: "400" }}>
