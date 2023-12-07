@@ -11,11 +11,15 @@ export default function Provider({
   return (
     <div className="col-12 col-md-6 col-lg-4 mb-4">
       <div className="card p-2 shadow border-0">
-        <img src={img} alt="provider-img" className="card-img mb-3" />
+        <img
+          src={img}
+          alt="provider-img"
+          className="card-img mb-3 cursor-pointer"
+        />
         <div className="d-flex flex-column align-items-center">
-          <h5 className="mb-3">{name}</h5>
+          <h5 className="mb-3 cursor-pointer">{name}</h5>
           <div
-            className="d-flex justify-content-center align-items-center mb-3"
+            className="d-flex justify-content-center align-items-center mb-3 cursor-pointer"
             style={{
               border: "1px solid lightgrey",
               borderRadius: "100px",

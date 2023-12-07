@@ -75,17 +75,17 @@ export default function ProvidersList() {
   ];
   return (
     <div style={{ backgroundColor: "#F7F7F7" }}>
-      <div className="bg-dark">
+      <div style={{ backgroundColor: "#000000ba" }}>
         <div className="container py-5">
           <h2 style={{ fontWeight: "600", color: "white" }}>Providers List</h2>
         </div>
       </div>
       <div className="container py-5">
         <div className="row">
-          <div className="col-12 col-lg-4">
+          <div className="col-12 col-lg-3 mb-4">
             <Filter />
           </div>
-          <div className="col-12 col-lg-8">
+          <div className="col-12 col-lg-9 mb-4">
             <div className="providers row">
               {providers.map((provider, index) => (
                 <Provider
