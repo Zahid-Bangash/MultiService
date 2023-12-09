@@ -1,4 +1,5 @@
 import React from "react";
+import Pagination from "@mui/material/Pagination";
 
 import Provider from "../components/Provider";
 import Filter from "../components/Filter";
@@ -97,6 +98,14 @@ export default function ProvidersList() {
                   totalReviews={provider.totalReviews}
                 />
               ))}
+            </div>
+            <div className="d-flex justify-content-center">
+              <Pagination
+                count={5}
+                //page={1}
+                //onChange={(event, page) => displayPage(page)}
+                className="custom-pagination"
+              />
             </div>
           </div>
         </div>

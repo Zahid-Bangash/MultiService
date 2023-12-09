@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+import Slider from "@mui/material/Slider";
 
 export default function Filter() {
   const [showMore, setShowMore] = useState(false);
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(540);
+  const [price, setPrice] = useState([0, 540]);
+
+  const handleChange = (event, newValue) => {
+    setPrice(newValue);
+  };
+
+  const valuetext = (value: number) => {
+    return `$${value}`;
+  };
 
   return (
     <div
-      className="p-3 shadow"
+      className="p-4 shadow"
       style={{ backgroundColor: "white", borderRadius: "10px" }}
     >
       <h3 className="mb-4">Filter</h3>
@@ -59,7 +67,7 @@ export default function Filter() {
       )}
       {!showMore && (
         <div
-          className="primary-color cursor-pointer mb-3"
+          className="primary-color cursor-pointer mb-4"
           style={{ fontSize: "12px", fontWeight: "600" }}
           onClick={() => setShowMore(true)}
         >
@@ -68,7 +76,7 @@ export default function Filter() {
       )}
       {showMore && (
         <div
-          className="primary-color cursor-pointer mb-3"
+          className="primary-color cursor-pointer mb-4"
           style={{ fontSize: "12px", fontWeight: "600" }}
           onClick={() => setShowMore(false)}
         >
@@ -76,37 +84,27 @@ export default function Filter() {
         </div>
       )}
       <h6 className="mb-3">Price</h6>
-      <div className="d-flex justify-content-between mb-2">
-        <div
-          className="primary-color"
-          style={{
-            fontWeight: "400",
-            backgroundColor: "rgba(76, 64, 237, 0.1)",
-            padding: "3px 8px",
-            borderRadius: "4px",
-          }}
-        >
-          $0
-        </div>
-        <div
-          className="primary-color"
-          style={{
-            fontWeight: "400",
-            backgroundColor: "rgba(76, 64, 237, 0.1)",
-            padding: "3px 8px",
-            borderRadius: "4px",
-          }}
-        >
-          $540
-        </div>
-      </div>
-      <input
-        type="range"
-        min={minPrice}
-        max={maxPrice}
-        step="1"
-        className="form-range"
+      <Slider
+        className="mb-4"
+        //getAriaLabel={() => "Temperature range"}
+        value={price}
+        onChange={handleChange}
+        valueLabelDisplay="auto"
+        //getAriaValueText={valuetext}
+        min={0}
+        max={540}
       />
+      <h6 className="mb-3">Service Type</h6>
+      <select className="form-select mb-4">
+        <option value="default" disabled>
+          Select Type
+        </option>
+        <option value="1">Home Cleaning</option>
+        <option value="2">Plumbing</option>
+        <option value="3">Floor Installation</option>
+        <option value="4">Car Washing</option>
+      </select>
+      <div className="primaryButton">Apply</div>
     </div>
   );
 }

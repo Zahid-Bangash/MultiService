@@ -44,7 +44,9 @@ export default function Provider({
               ({totalReviews})
             </div>
           </div>
-          <di className="primaryButtonOutline w-100 py-1 mb-2">View Profile</di>
+          <div className="primaryButtonOutline w-100 py-1 mb-2">
+            View Profile
+          </div>
         </div>
       </div>
     </div>

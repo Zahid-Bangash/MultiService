@@ -25,7 +25,7 @@ export default function Footer() {
             </p>
             <div className="d-flex">
               <div
-                className="py-1 ps-3 pe-4 me-3"
+                className="py-1 ps-3 pe-4 me-3 cursor-pointer"
                 style={{ border: "1px solid white", borderRadius: "10px" }}
               >
                 <div className="d-flex align-items-center">
@@ -47,7 +47,7 @@ export default function Footer() {
                 </div>
               </div>
               <div
-                className="py-1 ps-3 pe-4"
+                className="py-1 ps-3 pe-4 cursor-pointer"
                 style={{ border: "1px solid white", borderRadius: "10px" }}
               >
                 <div className="d-flex align-items-center">
@@ -112,7 +112,7 @@ export default function Footer() {
             <h5 className="mb-4">Follow Us</h5>
             <div className="d-flex">
               <div
-                className="me-2"
+                className="me-2 cursor-pointer"
                 style={{
                   width: "32px",
                   height: "32px",
@@ -140,7 +140,7 @@ export default function Footer() {
                 </div>
               </div>
               <div
-                className="me-2"
+                className="me-2 cursor-pointer"
                 style={{
                   width: "32px",
                   height: "32px",
@@ -154,7 +154,7 @@ export default function Footer() {
                 <i className="fa fa-twitter" style={{ color: "white" }}></i>
               </div>
               <div
-                className="me-2"
+                className="me-2 cursor-pointer"
                 style={{
                   width: "32px",
                   height: "32px",
@@ -168,6 +168,7 @@ export default function Footer() {
                 <i className="fa fa-linkedin" style={{ color: "white" }}></i>
               </div>
               <div
+                className="cursor-pointer"
                 style={{
                   width: "32px",
                   height: "32px",

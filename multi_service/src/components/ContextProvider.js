@@ -16,7 +16,7 @@ const ContextProvider = ({ children }) => {
   //    image: null,
   //  });
 
-  return <Context.Provider>{children}</Context.Provider>;
+  return <Context.Provider value={{}}>{children}</Context.Provider>;
 };
 
 export default ContextProvider;

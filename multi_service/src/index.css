@@ -114,12 +114,22 @@ code {
 }
 
 .custom-pagination .MuiPaginationItem-root.Mui-selected {
-    background-color: #FBB439;
+    background-color: #4c40ed;
     color: #fff;
 }
 
 .custom-pagination .MuiPaginationItem-root.Mui-selected:hover {
-    background-color: #e6a605;
+    background-color: #4c40ed;
+    color: #fff;
+}
+
+.custom-pagination .MuiPaginationItem-root {
+    background-color: #fff;
+    color: #000;
+}
+
+.custom-pagination .MuiPaginationItem-root:hover {
+    background-color: #4c40ed;
     color: #fff;
 }
 
