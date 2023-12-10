@@ -105,7 +105,7 @@ export default function Filter() {
             )}
             {!showMore && (
               <div
-                className="primary-color cursor-pointer mb-4"
+                className="primary-color cursor-pointer mb-4 d-inline-block"
                 style={{ fontSize: "12px", fontWeight: "600" }}
                 onClick={() => setShowMore(true)}
               >
@@ -114,7 +114,7 @@ export default function Filter() {
             )}
             {showMore && (
               <div
-                className="primary-color cursor-pointer mb-4"
+                className="primary-color cursor-pointer mb-4 d-inline-block"
                 style={{ fontSize: "12px", fontWeight: "600" }}
                 onClick={() => setShowMore(false)}
               >
