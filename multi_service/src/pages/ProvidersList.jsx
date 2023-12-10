@@ -74,9 +74,10 @@ export default function ProvidersList() {
       totalReviews: 20,
     },
   ];
+
   return (
     <div style={{ backgroundColor: "#F7F7F7" }}>
-      <div style={{ backgroundColor: "#000000ba" }}>
+      <div style={{ backgroundColor: "#000" }}>
         <div className="container py-5">
           <h2 style={{ fontWeight: "600", color: "white" }}>Providers List</h2>
         </div>
@@ -99,7 +100,7 @@ export default function ProvidersList() {
                 />
               ))}
             </div>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center mt-4">
               <Pagination
                 count={5}
                 //page={1}

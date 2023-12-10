@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import ProvidersList from "./pages/ProvidersList";
+import ServiceList from "./pages/ServiceList";
 //import Loading from "../src/components/Loading";
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         },
         {
           path: "/home",
-          element: <ProvidersList />,
+          element: <ServiceList />,
         },
 
         {

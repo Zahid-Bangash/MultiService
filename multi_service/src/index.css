@@ -137,6 +137,49 @@ code {
     cursor: pointer;
 }
 
+.form-control:focus,
+.form-check-input:focus,
+.form-select:focus {
+    border-color: #4c40ed !important;
+    box-shadow: 0 0 3px #4c40ed !important;
+}
+
+@media (min-width:992px) {
+    .filter-shadow {
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .text-center-sm {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .justify-content-center-sm {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .app-width {
+        width: 195.63px;
+    }
+}
+
+@media screen and (min-width:431px) {
+    .app-margin {
+        margin-right: 20px;
+    }
+}
+
 /* .......................................................................................................... */
 
 /* Navbar */
