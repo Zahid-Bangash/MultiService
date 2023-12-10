@@ -33,7 +33,7 @@ function App() {
         },
         {
           path: "/home",
-          element: <ServiceList />,
+          element: <ProvidersList />,
         },
 
         {
