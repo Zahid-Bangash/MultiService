@@ -17,6 +17,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ProvidersList from "./pages/ProvidersList";
 import ServiceList from "./pages/ServiceList";
 import JobList from "./pages/JobList";
+import JobDetails from "./pages/JobDetails";
 //import Loading from "../src/components/Loading";
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
         {
           path: "/home",
           element: <JobList />,
+        },
+        {
+          path: "/jobs/:title",
+          element: <JobDetails />,
         },
 
         {

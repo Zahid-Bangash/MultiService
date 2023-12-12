@@ -45,8 +45,11 @@ export default function JobCard({ job }) {
           >
             ${job.price[0]}-${job.price[1]}
           </div>
-          <div style={{ fontSize: "12px", fontWeight: "400" }}>
-            {job.projectType}
+          <div
+            className="text-secondary"
+            style={{ fontSize: "12px", fontWeight: "400" }}
+          >
+            {job.jobType}
           </div>
         </div>
       </div>

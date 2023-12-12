@@ -1,64 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Pagination from "@mui/material/Pagination";
+import { Link } from "react-router-dom";
+import { Context } from "../components/ContextProvider";
 
 import JobCard from "../components/JobCard";
 import Filter from "../components/Filter";
 
-import job1 from "../assets/job1.png";
-import job2 from "../assets/job2.png";
-import job3 from "../assets/job3.png";
-
 export default function JobList() {
-  const jobs = [
-    {
-      img: job1,
-      title: "Home repairer to repair doors and windows of 2 rooms",
-      recruiter: "Aryan Hassan",
-      address: "New York, USA",
-      price: [10, 25],
-      projectType: "Per Hour",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quas id porro, beatae sequi nisi repellendus adipisci tempore labore, nulla animi sapiente, repellat aspernatur ipsam dolorem cum debitis delectus et.",
-      skills: ["Home Repair", "Door Repair", "Window Repair"],
-      timestamp: "12hr ago",
-    },
-    {
-      img: job2,
-      title: "Handy Man for floor installation and plumbing",
-      recruiter: "Wonder8 Inc.",
-      address: "New York, USA",
-      price: [40, 50],
-      projectType: "Per Hour",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quas id porro, beatae sequi nisi repellendus adipisci tempore labore, nulla animi sapiente, repellat aspernatur ipsam dolorem cum debitis delectus et.",
-      skills: ["Floor Installation", "Plumbing", "Repair"],
-      timestamp: "12hr ago",
-    },
-    {
-      img: job3,
-      title: "Need a home cleaner for full time",
-      recruiter: "Soloman Lane",
-      address: "New York, USA",
-      price: [200, 350],
-      projectType: "Average",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quas id porro, beatae sequi nisi repellendus adipisci tempore labore, nulla animi sapiente, repellat aspernatur ipsam dolorem cum debitis delectus et.",
-      skills: ["Home Cleaning", "Floor Cleaning", "Car Washing"],
-      timestamp: "12hr ago",
-    },
-    {
-      img: job1,
-      title: "Home repairer to repair doors and windows of 2 rooms",
-      recruiter: "Aryan Hassan",
-      address: "New York, USA",
-      price: [10, 25],
-      projectType: "Per Hour",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quas id porro, beatae sequi nisi repellendus adipisci tempore labore, nulla animi sapiente, repellat aspernatur ipsam dolorem cum debitis delectus et.",
-      skills: ["Home Repair", "Door Repair", "Window Repair"],
-      timestamp: "12hr ago",
-    },
-  ];
+  const { jobs } = useContext(Context);
 
   return (
     <div style={{ backgroundColor: "#F7F7F7" }}>
@@ -75,7 +24,14 @@ export default function JobList() {
           <div className="col-12 col-lg-9 mb-4">
             <div className="providers row">
               {jobs.map((job, index) => (
-                <JobCard key={index} job={job} />
+                <Link
+                  key={index}
+                  to={`/jobs/${job.title.replace(/\s+/g, "-")}`}
+                  state={{ job }}
+                  className="text-decoration-none text-dark"
+                >
+                  <JobCard job={job} />
+                </Link>
               ))}
             </div>
             <div className="d-flex justify-content-center mt-4">
