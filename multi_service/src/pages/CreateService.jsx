@@ -46,31 +46,14 @@ export default function CreateService() {
             }
             return (
               <Step key={step} {...stepProps}>
-                <StepLabel></StepLabel>
+                <StepLabel className="stepper"></StepLabel>
               </Step>
             );
           })}
         </Stepper>
-        {activeStep === 0 && <Step1 />}
-        {activeStep === 1 && <Step2 />}
-        {activeStep === 2 && <Step3 />}
-        <div className="d-flex justify-content-end">
-          {activeStep !== 0 && (
-            <div
-              className="primaryButtonOutline px-5 me-3"
-              onClick={handleBack}
-            >
-              Back
-            </div>
-          )}
-          {activeStep === steps.length - 1 ? (
-            <div className="primaryButton px-5">Finish</div>
-          ) : (
-            <div className="primaryButton px-5" onClick={handleNext}>
-              Next
-            </div>
-          )}
-        </div>
+        {activeStep === 0 && <Step1 onNext={handleNext} />}
+        {activeStep === 1 && <Step2 onNext={handleNext} onBack={handleBack} />}
+        {activeStep === 2 && <Step3 onBack={handleBack} />}
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export default function JobApply() {
         Apply For Job
       </h1>
       <form className="w-md-75" onSubmit={handleSubmit}>
-        <div class="mb-3">
+        <div className="mb-3">
           <label htmlFor="amount" className="form-label">
             Amount
           </label>
@@ -35,7 +35,7 @@ export default function JobApply() {
             required
           />
         </div>
-        <div class="mb-3">
+        <div className="mb-3">
           <label htmlFor="description" className="form-label">
             Description
           </label>
