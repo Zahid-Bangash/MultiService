@@ -46,7 +46,7 @@ export default function CreateService() {
             }
             return (
               <Step key={step} {...stepProps}>
-                <StepLabel className="stepper"></StepLabel>
+                <StepLabel></StepLabel>
               </Step>
             );
           })}

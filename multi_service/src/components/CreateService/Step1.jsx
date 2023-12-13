@@ -116,7 +116,11 @@ export default function Step1({ onNext }) {
         </div>
       </div>
       <div className="d-flex justify-content-end">
-        <button style={{ border: 0 }} className="primaryButton px-5">
+        <button
+          type="submit"
+          style={{ border: 0 }}
+          className="primaryButton px-5"
+        >
           Next
         </button>
       </div>
