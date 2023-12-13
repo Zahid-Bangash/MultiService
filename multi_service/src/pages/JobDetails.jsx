@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
@@ -90,7 +90,12 @@ export default function JobDetails() {
             </div>
           </div>
         </div>
-        <div className="primaryButton d-inline-block px-5 mb-5">Apply</div>
+        <Link
+          to="/apply-for-job"
+          className="primaryButton d-inline-block px-5 mb-5 text-decoration-none"
+        >
+          Apply
+        </Link>
         <div
           className="text-secondary mb-3"
           style={{ fontSize: "18px", fontWeight: "400" }}

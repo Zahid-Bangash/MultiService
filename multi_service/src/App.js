@@ -18,6 +18,8 @@ import ProvidersList from "./pages/ProvidersList";
 import ServiceList from "./pages/ServiceList";
 import JobList from "./pages/JobList";
 import JobDetails from "./pages/JobDetails";
+import JobApply from "./pages/JobApply";
+import CreateService from "./pages/CreateService";
 //import Loading from "../src/components/Loading";
 
 function App() {
@@ -35,13 +37,16 @@ function App() {
         },
         {
           path: "/home",
-          element: <JobList />,
+          element: <CreateService />,
         },
         {
           path: "/jobs/:title",
           element: <JobDetails />,
         },
-
+        {
+          path: "/apply-for-job",
+          element: <JobApply />,
+        },
         {
           path: "/contact",
           element: <Contact />,
