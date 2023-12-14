@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export default function Step2({ onBack, onNext }) {
   const [stepData, setStepData] = useState({ description: "", skills: [] });
@@ -45,7 +47,7 @@ export default function Step2({ onBack, onNext }) {
   return (
     <form onSubmit={handleNext}>
       <div
-        className="shadow p-4 mb-5"
+        className="shadow p-4 mb-4"
         style={{ backgroundColor: "white", borderRadius: "10px" }}
       >
         <div className="mb-4">
@@ -96,6 +98,7 @@ export default function Step2({ onBack, onNext }) {
       </div>
       <div className="d-flex justify-content-end">
         <button className="primaryButtonOutline me-3 px-5" onClick={onBack}>
+          <ArrowBackIcon className="me-2" />
           Back
         </button>
         <button
@@ -104,6 +107,7 @@ export default function Step2({ onBack, onNext }) {
           className="primaryButton px-5"
         >
           Next
+          <ArrowForwardIcon className="ms-2" />
         </button>
       </div>
     </form>

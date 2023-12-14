@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function Step1({ onNext }) {
   const [stepData, setStepData] = useState({
@@ -122,6 +123,7 @@ export default function Step1({ onNext }) {
           className="primaryButton px-5"
         >
           Next
+          <ArrowForwardIcon className="ms-2" />
         </button>
       </div>
     </form>
