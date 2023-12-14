@@ -96,8 +96,11 @@ export default function Step2({ onBack, onNext }) {
           ))}
         </div>
       </div>
-      <div className="d-flex justify-content-end">
-        <button className="primaryButtonOutline me-3 px-5" onClick={onBack}>
+      <div className="create-service-controls">
+        <button
+          className="primaryButtonOutline back-button-margin px-5"
+          onClick={onBack}
+        >
           <ArrowBackIcon className="me-2" />
           Back
         </button>

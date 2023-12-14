@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
@@ -31,6 +31,10 @@ export default function CreateService() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeStep]);
 
   return (
     <div style={{ backgroundColor: "#F7F7F7" }}>

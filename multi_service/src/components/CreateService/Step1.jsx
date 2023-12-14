@@ -116,7 +116,7 @@ export default function Step1({ onNext }) {
           </div>
         </div>
       </div>
-      <div className="d-flex justify-content-end">
+      <div className="create-service-controls">
         <button
           type="submit"
           style={{ border: 0 }}
