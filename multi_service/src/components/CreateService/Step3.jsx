@@ -3,6 +3,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual";
 import CancelIcon from "@mui/icons-material/Cancel";
+import { toast } from "react-toastify";
 
 export default function Step3({ onBack }) {
   const [images, setImages] = useState([]);
@@ -38,6 +39,13 @@ export default function Step3({ onBack }) {
   const handleRemoveImage = (index) => {
     const newImages = images.filter((_, i) => i !== index);
     setImages(newImages);
+  };
+
+  const handleFinish = () => {
+    if (images.length === 0) {
+      toast.warning("Please add at least one image.");
+      return;
+    }
   };
 
   return (
@@ -129,7 +137,11 @@ export default function Step3({ onBack }) {
           <ArrowBackIcon className="me-2" />
           Back
         </button>
-        <button style={{ border: 0 }} className="primaryButton px-5">
+        <button
+          style={{ border: 0 }}
+          className="primaryButton px-5"
+          onClick={handleFinish}
+        >
           Finish
           <CheckCircleIcon className="ms-2" />
         </button>
