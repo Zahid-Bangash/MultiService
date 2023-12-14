@@ -10,9 +10,9 @@ export default function JobDetails() {
 
   return (
     <div>
-      <div style={{ backgroundColor: "#000" }}>
+      <div style={{ backgroundColor: "#000", color: "white" }}>
         <div className="container py-5">
-          <h2 style={{ fontWeight: "600", color: "white" }}>{job.title}</h2>
+          <h1 style={{ fontWeight: "600" }}>{job.title}</h1>
         </div>
       </div>
       <div className="container py-5">

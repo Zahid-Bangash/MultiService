@@ -77,9 +77,9 @@ export default function ProvidersList() {
 
   return (
     <div style={{ backgroundColor: "#F7F7F7" }}>
-      <div style={{ backgroundColor: "#000" }}>
+      <div style={{ backgroundColor: "#000", color: "white" }}>
         <div className="container py-5">
-          <h2 style={{ fontWeight: "600", color: "white" }}>Providers List</h2>
+          <h1 style={{ fontWeight: "600" }}>Providers List</h1>
         </div>
       </div>
       <div className="container py-5">

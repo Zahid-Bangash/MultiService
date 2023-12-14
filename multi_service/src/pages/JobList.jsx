@@ -11,9 +11,9 @@ export default function JobList() {
 
   return (
     <div style={{ backgroundColor: "#F7F7F7" }}>
-      <div style={{ backgroundColor: "#000" }}>
+      <div style={{ backgroundColor: "#000", color: "white" }}>
         <div className="container py-5">
-          <h2 style={{ fontWeight: "600", color: "white" }}>Find Job</h2>
+          <h1 style={{ fontWeight: "600" }}>Find Job</h1>
         </div>
       </div>
       <div className="container py-5">

@@ -113,10 +113,10 @@ export default function ServiceList() {
   ];
 
   return (
-    <div style={{ backgroundColor: "#F7F7F7" }}>
+    <div style={{ backgroundColor: "#F7F7F7", color: "white" }}>
       <div style={{ backgroundColor: "#000" }}>
         <div className="container py-5">
-          <h2 style={{ fontWeight: "600", color: "white" }}>Service List</h2>
+          <h1 style={{ fontWeight: "600" }}>Service List</h1>
         </div>
       </div>
       <div className="container py-5">
