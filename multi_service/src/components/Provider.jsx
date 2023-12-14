@@ -29,7 +29,7 @@ export default function Provider({
               padding: "6px 16px",
             }}
           >
-            <div style={{ fontSize: "12px", fontWeight: "400" }}>
+            <div style={{ fontSize: "12px",  }}>
               {profession}
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function Provider({
               {stars}
             </div>
             <div
-              style={{ fontSize: "12px", color: "#8A919C", fontWeight: "400" }}
+              style={{ fontSize: "12px", color: "#8A919C", }}
             >
               ({totalReviews})
             </div>

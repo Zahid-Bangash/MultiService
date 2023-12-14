@@ -13,10 +13,7 @@ export default function Home() {
               >
                 Discover & Book Local Service Providers
               </h1>
-              <div
-                className="text-secondary"
-                style={{ fontSize: "20px", fontWeight: "400" }}
-              >
+              <div className="text-secondary" style={{ fontSize: "20px" }}>
                 Search From 100 Awesome Verified Service Providers
               </div>
             </div>

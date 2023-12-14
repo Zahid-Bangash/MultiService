@@ -14,7 +14,18 @@ export default function Step3({ onBack }) {
           Upload Images
         </div>
         <div className="row">
-          <div className="col-12 col-lg-6 mb-3 mb-lg-0"></div>
+          <div className="col-12 col-lg-6 mb-3 mb-lg-0 d-flex justify-content-center align-items-center">
+            <div className="d-flex flex-column justify-content-center">
+              <PhotoSizeSelectActualIcon
+                className="mb-3"
+                style={{ width: "40px", height: "40px", color: "grey" }}
+              />
+              <div className="mb-2">Drag & Drop Files or Browse</div>
+              <div className="text-secondary" style={{ fontSize: "10px" }}>
+                Supported formates: PNG, GIF, JPEG, JPG
+              </div>
+            </div>
+          </div>
           <div className="col-12 col-lg-6"></div>
         </div>
       </div>

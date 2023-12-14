@@ -26,9 +26,7 @@ export default function ServiceCard({ service }) {
               size="small"
               className="me-2"
             />
-            <div
-              style={{ fontSize: "12px", color: "#8A919C", fontWeight: "400" }}
-            >
+            <div style={{ fontSize: "12px", color: "#8A919C" }}>
               ({service.totalReviews})
             </div>
           </div>
@@ -40,7 +38,6 @@ export default function ServiceCard({ service }) {
                   border: "1px solid lightgrey",
                   borderRadius: "100px",
                   fontSize: "12px",
-                  fontWeight: "400",
                 }}
                 className="text-secondary me-2 px-2 py-1"
               >
@@ -60,10 +57,7 @@ export default function ServiceCard({ service }) {
                 <div style={{ fontSize: "14px", fontWeight: "500" }}>
                   {service.providerName}
                 </div>
-                <div
-                  className="text-secondary"
-                  style={{ fontSize: "12px", fontWeight: "400" }}
-                >
+                <div className="text-secondary" style={{ fontSize: "12px" }}>
                   {service.providerAddress}
                 </div>
               </div>

@@ -68,7 +68,7 @@ export default function Navbar() {
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
           <h3 style={{ fontWeight: "600" }}>
-            Multi<span style={{ fontWeight: "400" }}>service</span>
+            Multi<span>service</span>
           </h3>
         </Link>
         <button

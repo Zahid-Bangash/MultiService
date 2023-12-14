@@ -34,15 +34,10 @@ export default function Footer() {
                     style={{ width: "40px", height: "40px" }}
                   />
                   <div>
-                    <div
-                      className="mb-1"
-                      style={{ fontSize: "12px", fontWeight: "400" }}
-                    >
+                    <div className="mb-1" style={{ fontSize: "12px" }}>
                       Download on the
                     </div>
-                    <div style={{ fontSize: "20px", fontWeight: "400" }}>
-                      App Store
-                    </div>
+                    <div style={{ fontSize: "20px" }}>App Store</div>
                   </div>
                 </div>
               </div>
@@ -58,12 +53,8 @@ export default function Footer() {
                     style={{ width: "40px", height: "40px" }}
                   />
                   <div>
-                    <div style={{ fontSize: "12px", fontWeight: "400" }}>
-                      Get it on
-                    </div>
-                    <div style={{ fontSize: "20px", fontWeight: "400" }}>
-                      Google Play
-                    </div>
+                    <div style={{ fontSize: "12px" }}>Get it on</div>
+                    <div style={{ fontSize: "20px" }}>Google Play</div>
                   </div>
                 </div>
               </div>
@@ -74,38 +65,22 @@ export default function Footer() {
               <div className="col-12 col-sm-6 pt-3 mb-5">
                 <h5 className="mb-4">Quick Links</h5>
                 <div className="mb-3">
-                  <Link
-                    to="/"
-                    className="text-decoration-none text-white"
-                    style={{ fontWeight: "400" }}
-                  >
+                  <Link to="/" className="text-decoration-none text-white">
                     Products
                   </Link>
                 </div>
                 <div className="mb-3">
-                  <Link
-                    to="/"
-                    className="text-decoration-none text-white"
-                    style={{ fontWeight: "400" }}
-                  >
+                  <Link to="/" className="text-decoration-none text-white">
                     Support
                   </Link>
                 </div>
                 <div className="mb-3">
-                  <Link
-                    to="/"
-                    className="text-decoration-none text-white"
-                    style={{ fontWeight: "400" }}
-                  >
+                  <Link to="/" className="text-decoration-none text-white">
                     Terms & Policy
                   </Link>
                 </div>
                 <div>
-                  <Link
-                    to="/"
-                    className="text-decoration-none text-white"
-                    style={{ fontWeight: "400" }}
-                  >
+                  <Link to="/" className="text-decoration-none text-white">
                     Cookies
                   </Link>
                 </div>

@@ -18,18 +18,12 @@ export default function JobCard({ job }) {
             <div style={{ fontSize: "20px", fontWeight: "500" }}>
               {job.title}
             </div>
-            <div
-              className="text-secondary"
-              style={{ fontSize: "14px", fontWeight: "400" }}
-            >
+            <div className="text-secondary" style={{ fontSize: "14px" }}>
               {job.recruiter}
             </div>
             <div className="d-flex align-items-center">
               <FmdGoodOutlinedIcon style={{ width: "16px", height: "16px" }} />
-              <div
-                className="text-secondary ms-1"
-                style={{ fontSize: "14px", fontWeight: "400" }}
-              >
+              <div className="text-secondary ms-1" style={{ fontSize: "14px" }}>
                 {job.address}
               </div>
             </div>
@@ -45,18 +39,12 @@ export default function JobCard({ job }) {
           >
             ${job.price[0]}-${job.price[1]}
           </div>
-          <div
-            className="text-secondary"
-            style={{ fontSize: "12px", fontWeight: "400" }}
-          >
+          <div className="text-secondary" style={{ fontSize: "12px" }}>
             {job.jobType}
           </div>
         </div>
       </div>
-      <div
-        className="text-secondary mb-3"
-        style={{ fontSize: "14px", fontWeight: "400" }}
-      >
+      <div className="text-secondary mb-3" style={{ fontSize: "14px" }}>
         {job.description}
       </div>
       <div className="d-flex">
@@ -67,7 +55,6 @@ export default function JobCard({ job }) {
               border: "1px solid lightgrey",
               borderRadius: "100px",
               fontSize: "14px",
-              fontWeight: "400",
               color: "rgba(69, 69, 69, 1)",
             }}
           >
@@ -77,7 +64,7 @@ export default function JobCard({ job }) {
       </div>
       <div
         className="d-flex justify-content-end text-secondary"
-        style={{ fontSize: "12px", fontWeight: "400" }}
+        style={{ fontSize: "12px" }}
       >
         {job.timestamp}
       </div>

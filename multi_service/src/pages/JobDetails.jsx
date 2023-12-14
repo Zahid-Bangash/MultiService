@@ -67,9 +67,7 @@ export default function JobDetails() {
                 style={{ color: "rgba(106, 109, 113, 1)" }}
               />
             </div>
-            <div className="text-secondary" style={{ fontWeight: "400" }}>
-              {job.address}
-            </div>
+            <div className="text-secondary">{job.address}</div>
           </div>
           <div className="d-flex align-items-center me-5">
             <div
@@ -85,9 +83,7 @@ export default function JobDetails() {
                 style={{ color: "rgba(106, 109, 113, 1)" }}
               />
             </div>
-            <div className="text-secondary" style={{ fontWeight: "400" }}>
-              {job.date}
-            </div>
+            <div className="text-secondary">{job.date}</div>
           </div>
         </div>
         <Link
@@ -96,10 +92,7 @@ export default function JobDetails() {
         >
           Apply
         </Link>
-        <div
-          className="text-secondary mb-3"
-          style={{ fontSize: "18px", fontWeight: "400" }}
-        >
+        <div className="text-secondary mb-3" style={{ fontSize: "18px" }}>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere atque
           illum maxime exercitationem officiis accusamus explicabo nisi, ex quis
           a eaque alias quo! Quia quisquam illo modi alias deleniti temporibus.
@@ -146,7 +139,6 @@ export default function JobDetails() {
                 border: "1px solid lightgrey",
                 borderRadius: "100px",
                 fontSize: "14px",
-                fontWeight: "400",
               }}
             >
               {skill}
