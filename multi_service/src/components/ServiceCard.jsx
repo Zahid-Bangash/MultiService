@@ -2,8 +2,11 @@ import React from "react";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import { useNavigate } from "react-router-dom";
 
 export default function ServiceCard({ service }) {
+  const navigate = useNavigate();
+
   return (
     <div className="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
       <div className="card shadow border-0" style={{ borderRadius: "10px" }}>
@@ -11,10 +14,25 @@ export default function ServiceCard({ service }) {
           src={service.img}
           alt="service-img"
           className="cursor-pointer"
-          style={{ borderTopLeftRadius: "10px", borderTopRightRadius: "10px" }}
+          style={{
+            borderTopLeftRadius: "10px",
+            borderTopRightRadius: "10px",
+          }}
+          onClick={() =>
+            navigate(`/services/${service.serviceName.replace(/\s+/g, "-")}`, {
+              state: { service },
+            })
+          }
         />
         <div className="p-3 pt-2">
-          <h5 className="mb-2 cursor-pointer">{service.serviceName}</h5>
+          <h5
+            className="mb-2 cursor-pointer"
+            onClick={() =>
+              navigate(`/services/${service.serviceName.replace(/\s+/g, "-")}`)
+            }
+          >
+            {service.serviceName}
+          </h5>
           <div className="d-flex mb-3">
             <Rating
               value={service.stars}

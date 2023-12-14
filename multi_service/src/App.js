@@ -20,6 +20,7 @@ import JobList from "./pages/JobList";
 import JobDetails from "./pages/JobDetails";
 import JobApply from "./pages/JobApply";
 import CreateService from "./pages/CreateService";
+import ServiceDetails from "./pages/ServiceDetails";
 //import Loading from "../src/components/Loading";
 
 function App() {
@@ -37,11 +38,15 @@ function App() {
         },
         {
           path: "/home",
-          element: <CreateService />,
+          element: <ServiceList />,
         },
         {
           path: "/jobs/:title",
           element: <JobDetails />,
+        },
+        {
+          path: "/services/:title",
+          element: <ServiceDetails />,
         },
         {
           path: "/apply-for-job",
