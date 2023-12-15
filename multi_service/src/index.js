@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "react-toastify/dist/ReactToastify.css";
 import "font-awesome/css/font-awesome.css";
+import "react-quill/dist/quill.snow.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

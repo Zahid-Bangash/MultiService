@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ReactQuill from "react-quill";
 
 export default function Step2({ onBack, onNext }) {
   const [stepData, setStepData] = useState({ description: "", skills: [] });
@@ -37,6 +38,10 @@ export default function Step2({ onBack, onNext }) {
 
   const handleNext = (e) => {
     e.preventDefault();
+    if (stepData.description.trim() === "") {
+      toast.warning("Please enter service description.");
+      return;
+    }
     if (stepData.skills.length < 1) {
       toast.warning("Please check at least one skill.");
       return;
@@ -51,22 +56,15 @@ export default function Step2({ onBack, onNext }) {
         style={{ backgroundColor: "white", borderRadius: "10px" }}
       >
         <div className="mb-4">
-          <label
-            htmlFor="description"
-            className="form-label"
-            style={{ fontWeight: "500" }}
-          >
+          <label className="form-label" style={{ fontWeight: "500" }}>
             Service Description
           </label>
-          <textarea
+          <ReactQuill
             placeholder="Type Here..."
-            className="form-control"
-            rows={10}
-            id="description"
-            name="description"
             value={stepData.description}
-            onChange={changeData}
-            required
+            onChange={(value) =>
+              setStepData({ ...stepData, description: value })
+            }
           />
         </div>
         <label className="form-label mb-4" style={{ fontWeight: "500" }}>
