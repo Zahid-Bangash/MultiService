@@ -8,6 +8,7 @@ import service1 from "../assets/service1.png";
 import service2 from "../assets/service2.png";
 import service3 from "../assets/service3.png";
 import profile from "../assets/profile.jpg";
+import profile1 from "../assets/profile1.jpg";
 
 export default function ServiceList() {
   const services = [
@@ -28,10 +29,10 @@ export default function ServiceList() {
       stars: 4.5,
       totalReviews: 20,
       skills: ["Car Wash", "Car Care", "Cleaning"],
-      providerName: "Jashon Alex",
-      providerImg: profile,
-      providerAddress: "New York, US",
-      price: "25.00",
+      providerName: "Zahid Bangash",
+      providerImg: profile1,
+      providerAddress: "Attock, Pakistan",
+      price: "35.00",
     },
     {
       img: service3,
@@ -39,10 +40,10 @@ export default function ServiceList() {
       stars: 5.0,
       totalReviews: 20,
       skills: ["Car Wash", "Car Care", "Cleaning"],
-      providerName: "Jashon Alex",
+      providerName: "Rashid Umar",
       providerImg: profile,
-      providerAddress: "New York, US",
-      price: "25.00",
+      providerAddress: "Islamabad, Pakistan",
+      price: "65.00",
     },
     {
       img: service1,
@@ -50,9 +51,9 @@ export default function ServiceList() {
       stars: 3.0,
       totalReviews: 20,
       skills: ["Car Wash", "Car Care", "Cleaning"],
-      providerName: "Jashon Alex",
-      providerImg: profile,
-      providerAddress: "New York, US",
+      providerName: "Aslam Khan",
+      providerImg: profile1,
+      providerAddress: "Hangu, Pakistan",
       price: "25.00",
     },
     {

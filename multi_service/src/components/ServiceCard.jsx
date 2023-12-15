@@ -28,7 +28,12 @@ export default function ServiceCard({ service }) {
           <h5
             className="mb-2 cursor-pointer"
             onClick={() =>
-              navigate(`/services/${service.serviceName.replace(/\s+/g, "-")}`)
+              navigate(
+                `/services/${service.serviceName.replace(/\s+/g, "-")}`,
+                {
+                  state: { service },
+                }
+              )
             }
           >
             {service.serviceName}
