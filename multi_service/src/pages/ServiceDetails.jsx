@@ -2,11 +2,9 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
-import DoneIcon from "@mui/icons-material/Done";
 import Done from "@mui/icons-material/Done";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-
-import profile from "../assets/profile.jpg";
+import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 
 export default function ServiceDetails() {
   const location = useLocation();
@@ -53,9 +51,9 @@ export default function ServiceDetails() {
       </div>
       <div className="container py-5">
         <div className="row">
-          <div className="col-12 col-md-8 bg-dark">1</div>
-          <div className="col-12 col-md-4">
-            <div className="shadow p-3 mb-3" style={{ borderRadius: "10px" }}>
+          <div className="col-12 col-lg-8 mb-4 mb-lg-0 bg-dark">1</div>
+          <div className="col-12 col-lg-4">
+            <div className="shadow p-4 mb-3" style={{ borderRadius: "10px" }}>
               <div
                 style={{
                   fontSize: "28px",
@@ -63,10 +61,10 @@ export default function ServiceDetails() {
                   color: "rgba(76, 64, 237, 1)",
                 }}
               >
-                $25.00
+                ${service.price}
               </div>
               <div className="text-secondary mb-3" style={{ fontSize: "10px" }}>
-                Per Hour
+                {service.jobType}
               </div>
               <div className="text-secondary mb-4" style={{ fontSize: "14px" }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -101,7 +99,7 @@ export default function ServiceDetails() {
               <CalendarMonthIcon className="me-2" />
               Make An Appointment
             </div>
-            <div className="shadow mb-4 p-3" style={{ borderRadius: "10px" }}>
+            <div className="shadow mb-4 p-4" style={{ borderRadius: "10px" }}>
               <div
                 className="mb-4"
                 style={{ fontSize: "20px", fontWeight: "500" }}
@@ -157,11 +155,11 @@ export default function ServiceDetails() {
                 </div>
               </div>
             </div>
-            <div className="shadow p-3 pt-4" style={{ borderRadius: "10px" }}>
-              <div className="d-flex flex-column align-items-center">
+            <div className="shadow p-4 pt-4" style={{ borderRadius: "10px" }}>
+              <div className="d-flex flex-column align-items-center mb-3">
                 <img
                   className="mb-3"
-                  src={profile}
+                  src={service.providerImg}
                   alt="service-provider-img"
                   style={{
                     width: "140px",
@@ -173,7 +171,7 @@ export default function ServiceDetails() {
                   className="mb-2"
                   style={{ fontSize: "20px", fontWeight: "600" }}
                 >
-                  Zahid Bangash
+                  {service.providerName}
                 </div>
                 <div
                   className="mb-3 py-1 px-3"
@@ -189,12 +187,47 @@ export default function ServiceDetails() {
                 <div className="d-flex align-items-center">
                   <StarIcon style={{ width: "21px", height: "21px" }} />
                   <div className="mx-1" style={{ fontWeight: "600" }}>
-                    5.0
+                    {service.stars.toFixed(1)}
                   </div>
                   <div className="text-secondary" style={{ fontSize: "14px" }}>
-                    (20)
+                    ({service.totalReviews})
                   </div>
                 </div>
+              </div>
+              <div className="d-flex justify-content-between mb-4">
+                <div className="d-flex align-items-center text-secondary">
+                  <FmdGoodOutlinedIcon className="me-2" />
+                  {service.providerAddress}
+                </div>
+                <div className="d-flex align-items-center text-secondary">
+                  <ChatBubbleOutlineRoundedIcon className="me-2" />
+                  English, Spanish
+                </div>
+              </div>
+              <div className="text-secondary mb-4" style={{ fontSize: "14px" }}>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quaerat nostrum nulla facere quod adipisci voluptas, dolorem,
+                fugit sequi laudantium illo quas provident nihil consequuntur
+                quo tenetur illum culpa quidem a.
+              </div>
+              <div className="mb-3" style={{ fontWeight: "500" }}>
+                Skills
+              </div>
+              <div className="d-flex flex-wrap">
+                {service.skills.map((skill, index) => (
+                  <div
+                    key={index}
+                    className="mb-2 me-2 py-1 px-3"
+                    style={{
+                      fontSize: "12px",
+                      border: "1px solid lightgrey",
+                      borderRadius: "100px",
+                      color: "rgba(69, 69, 69, 1)",
+                    }}
+                  >
+                    {skill}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

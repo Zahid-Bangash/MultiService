@@ -49,7 +49,7 @@ export default function ServiceCard({ service }) {
             </div>
           </div>
           <div className="d-flex mb-3">
-            {service.includes.map((include, index) => (
+            {service.skills.map((include, index) => (
               <div
                 key={index}
                 style={{
