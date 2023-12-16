@@ -66,13 +66,22 @@ export default function Step3({ onBack }) {
     if (images.length === 8) {
       return;
     }
-    const droppedFiles = event.dataTransfer.files;
-    const newImages = Array.from(droppedFiles).map((file) => ({
-      file,
-      uri: URL.createObjectURL(file),
-    }));
-    setImages((prevImages) => [...prevImages, ...newImages]);
-    document.getElementById("imageInput").value = "";
+    const droppedFile = event.dataTransfer.files[0];
+    const image = new Image();
+    image.src = URL.createObjectURL(droppedFile);
+    image.onload = () => {
+      const aspectRatio = image.width / image.height;
+      if (aspectRatio === 2) {
+        setImages((prevImages) => [
+          ...prevImages,
+          { file: droppedFile, uri: URL.createObjectURL(droppedFile) },
+        ]);
+      } else {
+        setSelectedImg(URL.createObjectURL(droppedFile));
+        document.getElementById("openModal").click();
+      }
+    };
+    event.target.value = "";
   };
 
   const preventDefault = (event) => {
@@ -160,7 +169,7 @@ export default function Step3({ onBack }) {
                       alt={`service-img-${index + 1}`}
                       style={{
                         width: "120px",
-                        height: "120px",
+                        //height: "120px",
                         borderRadius: "5px",
                       }}
                     />
