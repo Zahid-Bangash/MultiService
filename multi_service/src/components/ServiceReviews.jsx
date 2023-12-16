@@ -1,4 +1,5 @@
 import React from "react";
+import Pagination from "@mui/material/Pagination";
 
 import ServiceReviewCard from "./ServiceReviewCard";
 
@@ -49,6 +50,14 @@ export default function ServiceReviews() {
       {reviews.map((review, index) => (
         <ServiceReviewCard key={index} review={review} />
       ))}
+      <div className="d-flex justify-content-center mt-4">
+        <Pagination
+          count={5}
+          //page={1}
+          //onChange={(event, page) => displayPage(page)}
+          className="custom-pagination"
+        />
+      </div>
     </div>
   );
 }
