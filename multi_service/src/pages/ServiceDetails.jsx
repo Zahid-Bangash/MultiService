@@ -8,6 +8,9 @@ import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineR
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
+import AboutService from "../components/AboutService";
+import ServiceReviews from "../components/ServiceReviews";
+
 import cleaning1 from "../assets/cleaning1.png";
 import cleaning2 from "../assets/cleaning2.png";
 import cleaning3 from "../assets/cleaning3.png";
@@ -16,6 +19,7 @@ export default function ServiceDetails() {
   const location = useLocation();
   const { service } = location.state;
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [activeTab, setActiveTab] = useState("details");
 
   const images = [cleaning1, cleaning2, cleaning3];
 
@@ -111,7 +115,7 @@ export default function ServiceDetails() {
                 <span className="visually-hidden">Next</span>
               </button>
             </div>
-            <div className="d-flex">
+            <div className="d-flex mb-5">
               {images.map((img, index) => (
                 <img
                   key={index}
@@ -128,6 +132,41 @@ export default function ServiceDetails() {
                 />
               ))}
             </div>
+            <div className="d-flex tabs">
+              <div
+                className={`me-5 cursor-pointer pb-4 ${
+                  activeTab === "details" ? "primary-color" : "text-secondary"
+                }`}
+                style={{
+                  fontWeight: activeTab === "details" ? "600" : "500",
+                  borderBottom:
+                    activeTab === "details"
+                      ? "3px solid #4c40ed"
+                      : "3px solid rgba(255, 255, 255, 0.5)",
+                }}
+                onClick={() => setActiveTab("details")}
+              >
+                Service Details
+              </div>
+              <div
+                className={`cursor-pointer pb-4 ${
+                  activeTab === "reviews" ? "primary-color" : "text-secondary"
+                }`}
+                style={{
+                  fontWeight: activeTab === "reviews" ? "600" : "500",
+                  borderBottom:
+                    activeTab === "reviews"
+                      ? "3px solid #4c40ed"
+                      : "3px solid rgba(255, 255, 255, 0.5)",
+                }}
+                onClick={() => setActiveTab("reviews")}
+              >
+                Reviews
+              </div>
+            </div>
+            <hr style={{ margin: "-2px 0" }} />
+            {activeTab === "details" && <AboutService />}
+            {activeTab === "reviews" && <ServiceReviews />}
           </div>
           <div className="col-12 col-lg-4">
             <div className="shadow p-4 mb-3" style={{ borderRadius: "10px" }}>
