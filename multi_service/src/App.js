@@ -38,7 +38,7 @@ function App() {
         },
         {
           path: "/home",
-          element: <ServiceList />,
+          element: <CreateService />,
         },
         {
           path: "/jobs/:title",

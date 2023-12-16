@@ -1,21 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { toast } from "react-toastify";
+import Cropper from "react-easy-crop";
 
 export default function Step3({ onBack }) {
   const [images, setImages] = useState([]);
+  const [selectedImg, setSelectedImg] = useState(null);
+  const [crop, setCrop] = useState({ x: 0, y: 0 });
+  const [zoom, setZoom] = useState(1);
+  const [croppedAreaPixels, setcroppedAreaPixels] = useState(null);
 
   const handleFileChange = (event) => {
-    const selectedFiles = event.target.files;
-    const newImages = Array.from(selectedFiles).map((file) => ({
-      file,
-      uri: URL.createObjectURL(file),
-    }));
-    setImages((prevImages) => [...prevImages, ...newImages]);
-    document.getElementById("imageInput").value = "";
+    const selectedFile = event.target.files[0];
+    const image = new Image();
+    image.src = URL.createObjectURL(selectedFile);
+    image.onload = () => {
+      const aspectRatio = image.width / image.height;
+      if (aspectRatio === 2) {
+        setImages((prevImages) => [
+          ...prevImages,
+          { file: selectedFile, uri: URL.createObjectURL(selectedFile) },
+        ]);
+      } else {
+        setSelectedImg(URL.createObjectURL(selectedFile));
+        document.getElementById("openModal").click();
+      }
+    };
+    event.target.value = "";
+  };
+
+  const handleSaveImage = () => {
+    const tempCanvas = document.createElement("canvas");
+    const ctx = tempCanvas.getContext("2d");
+
+    const x = croppedAreaPixels.x;
+    const y = croppedAreaPixels.y;
+    const width = croppedAreaPixels.width;
+    const height = croppedAreaPixels.height;
+
+    tempCanvas.width = width;
+    tempCanvas.height = height;
+
+    const img = new Image();
+    img.src = selectedImg;
+    ctx.drawImage(img, x, y, width, height, 0, 0, width, height);
+
+    const croppedDataURL = tempCanvas.toDataURL("image/jpeg");
+    fetch(croppedDataURL)
+      .then((res) => res.blob())
+      .then((blob) => {
+        const croppedImageFile = new File([blob], "cover-image", {
+          type: "image/jpeg",
+        });
+        setImages([...images, { uri: croppedDataURL, file: croppedImageFile }]);
+      });
+    document.getElementById("closeModal").click();
+    setSelectedImg(null);
   };
 
   const handleDrop = (event) => {
@@ -48,6 +91,16 @@ export default function Step3({ onBack }) {
     }
   };
 
+  useEffect(() => {
+    const modal = document.getElementById("cropperModal");
+    modal.addEventListener("hidden.bs.modal", () => {
+      setZoom(1);
+      setCrop({ x: 0, y: 0 });
+      setcroppedAreaPixels(null);
+      setSelectedImg(null);
+    });
+  }, []);
+
   return (
     <div>
       <div
@@ -70,7 +123,6 @@ export default function Step3({ onBack }) {
                 <input
                   type="file"
                   accept="image/*"
-                  multiple
                   onChange={handleFileChange}
                   style={{ display: "none" }}
                   id="imageInput"
@@ -93,7 +145,7 @@ export default function Step3({ onBack }) {
                   Supported Formates: PNG, GIF, JPEG, JPG
                 </div>
                 <div className="text-secondary" style={{ fontSize: "10px" }}>
-                  Maximum Size: 35 MB
+                  Aspect Ratio 2:1
                 </div>
               </div>
             )}
@@ -124,6 +176,79 @@ export default function Step3({ onBack }) {
                     />
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Modal */}
+      <button
+        id="openModal"
+        className="d-none"
+        data-bs-target="#cropperModal"
+        data-bs-toggle="modal"
+      ></button>
+      <div
+        className="modal fade"
+        id="cropperModal"
+        tabIndex="-1"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+          <div className="modal-content">
+            <div className="modal-body p-4">
+              <h5 className="mb-4">Crop Image</h5>
+              <div
+                className="crop-container mb-4"
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  height: "300px",
+                }}
+              >
+                <Cropper
+                  image={selectedImg}
+                  crop={crop}
+                  zoom={zoom}
+                  aspect={2 / 1}
+                  cropShape="rect"
+                  onCropChange={setCrop}
+                  onZoomChange={setZoom}
+                  onCropComplete={(croppedArea, croppedAreaPixels) =>
+                    setcroppedAreaPixels(croppedAreaPixels)
+                  }
+                />
+              </div>
+              <div className="controls">
+                <input
+                  type="range"
+                  value={zoom}
+                  min={1}
+                  max={3}
+                  step={0.1}
+                  aria-labelledby="Zoom"
+                  onChange={(e) => {
+                    setZoom(e.target.value);
+                  }}
+                  className="zoom-range"
+                />
+              </div>
+              <div className="d-flex">
+                <button
+                  type="submit"
+                  className="primaryButton me-3"
+                  style={{ border: 0 }}
+                  onClick={handleSaveImage}
+                >
+                  Save
+                </button>
+                <div
+                  className="primaryButtonOutline"
+                  id="closeModal"
+                  data-bs-dismiss="modal"
+                >
+                  Cancel
+                </div>
               </div>
             </div>
           </div>

@@ -11,6 +11,7 @@ export default function Step1({ onNext }) {
 
   const changeData = (e) => {
     const { name, value } = e.target;
+    if (name === "price" && parseFloat(value) < 0) return;
     setStepData({ ...stepData, [name]: value });
   };
 
