@@ -12,7 +12,6 @@ export default function CreateService() {
   const [skipped, setSkipped] = useState(new Set());
 
   const steps = ["1", "2", "3"];
-
   const isStepSkipped = (step) => {
     return skipped.has(step);
   };
@@ -38,6 +37,7 @@ export default function CreateService() {
 
   return (
     <div style={{ backgroundColor: "#F7F7F7" }}>
+      l
       <div className="container py-5">
         <h1 className="mb-5" style={{ fontWeight: "600" }}>
           Create Service

@@ -51,53 +51,109 @@ export default function Filter() {
               className="form-control mb-3"
               placeholder="Search"
             />
-            <div className="form-check mb-3">
-              <input className="form-check-input" type="checkbox" />
-              <label className="form-check-label text-secondary">
+            <div className="d-flex align-items-center mb-3">
+              <input
+                className="custom-checkbox cursor-pointer me-2"
+                type="checkbox"
+                id="floor"
+              />
+              <label
+                className="form-check-label text-secondary cursor-pointer"
+                htmlFor="floor"
+              >
                 Floor Installation
               </label>
             </div>
-            <div className="form-check mb-3">
-              <input className="form-check-input" type="checkbox" />
-              <label className="form-check-label text-secondary">
+            <div className="d-flex align-items-center mb-3">
+              <input
+                className="custom-checkbox cursor-pointer me-2"
+                type="checkbox"
+                id="gardening"
+              />
+              <label
+                className="form-check-label text-secondary cursor-pointer"
+                htmlFor="gardening"
+              >
                 Gardening
               </label>
             </div>
-            <div className="form-check mb-3">
-              <input className="form-check-input" type="checkbox" />
-              <label className="form-check-label text-secondary">
+            <div className="d-flex align-items-center mb-3">
+              <input
+                className="custom-checkbox cursor-pointer me-2"
+                type="checkbox"
+                id="home-cleaning"
+              />
+              <label
+                className="form-check-label text-secondary cursor-pointer"
+                htmlFor="home-cleaning"
+              >
                 Home Cleaning
               </label>
             </div>
-            <div className="form-check mb-3">
-              <input className="form-check-input" type="checkbox" />
-              <label className="form-check-label text-secondary">
+            <div className="d-flex align-items-center mb-3">
+              <input
+                className="custom-checkbox cursor-pointer me-2"
+                type="checkbox"
+                id="home-repair"
+              />
+              <label
+                className="form-check-label text-secondary cursor-pointer"
+                htmlFor="home-repair"
+              >
                 Home Repair
               </label>
             </div>
             {showMore && (
               <>
-                <div className="form-check mb-3">
-                  <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label text-secondary">
+                <div className="d-flex align-items-center mb-3">
+                  <input
+                    className="custom-checkbox me-2 cursor-pointer"
+                    type="checkbox"
+                    id="fl"
+                  />
+                  <label
+                    className="form-check-label text-secondary cursor-pointer"
+                    htmlFor="fl"
+                  >
                     Floor Installation
                   </label>
                 </div>
-                <div className="form-check mb-3">
-                  <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label text-secondary">
+                <div className="d-flex align-items-center mb-3">
+                  <input
+                    className="custom-checkbox me-2 cursor-pointer"
+                    type="checkbox"
+                    id="gn"
+                  />
+                  <label
+                    className="form-check-label text-secondary cursor-pointer"
+                    htmlFor="gn"
+                  >
                     Gardening
                   </label>
                 </div>
-                <div className="form-check mb-3">
-                  <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label text-secondary">
+                <div className="d-flex align-items-center mb-3">
+                  <input
+                    className="custom-checkbox me-2 cursor-pointer"
+                    type="checkbox"
+                    id="hc"
+                  />
+                  <label
+                    className="form-check-label text-secondary cursor-pointer"
+                    htmlFor="hc"
+                  >
                     Home Cleaning
                   </label>
                 </div>
-                <div className="form-check mb-3">
-                  <input className="form-check-input" type="checkbox" />
-                  <label className="form-check-label text-secondary">
+                <div className="d-flex align-items-center mb-3">
+                  <input
+                    className="custom-checkbox me-2 cursor-pointer"
+                    type="checkbox"
+                    id="hr"
+                  />
+                  <label
+                    className="form-check-label text-secondary cursor-pointer"
+                    htmlFor="hr"
+                  >
                     Home Repair
                   </label>
                 </div>

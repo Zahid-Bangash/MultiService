@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import Done from "@mui/icons-material/Done";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
-import job1 from "../assets/job1.png";
-import job2 from "../assets/job2.png";
-import job3 from "../assets/job3.png";
+import cleaning1 from "../assets/cleaning1.png";
+import cleaning2 from "../assets/cleaning2.png";
+import cleaning3 from "../assets/cleaning3.png";
 
 export default function ServiceDetails() {
   const location = useLocation();
   const { service } = location.state;
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  const images = [job1, job2, job3];
+  const images = [cleaning1, cleaning2, cleaning3];
 
   return (
     <div>
@@ -59,18 +62,22 @@ export default function ServiceDetails() {
         <div className="row">
           <div className="col-12 col-lg-8 mb-4 mb-lg-0">
             <div
-              id="carouselExample"
-              className="carousel slide"
+              id="service-carousel"
+              className="carousel slide mb-3"
               style={{ borderRadius: "10px" }}
             >
               <div className="carousel-inner" style={{ borderRadius: "10px" }}>
                 {images.map((img, index) => (
-                  <div key={index} className="carousel-item active">
+                  <div
+                    key={index}
+                    className={`carousel-item ${
+                      index === selectedImageIndex ? "active" : ""
+                    }`}
+                  >
                     <img
                       src={img}
                       className="d-block w-100"
-                      alt="service-img"
-                      style={{ height: "446px", objectFit: "cover" }}
+                      alt={`service-img-${index}`}
                     />
                   </div>
                 ))}
@@ -78,27 +85,48 @@ export default function ServiceDetails() {
               <button
                 className="carousel-control-prev"
                 type="button"
-                data-bs-target="#carouselExample"
+                data-bs-target="#service-carousel"
                 data-bs-slide="prev"
               >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
+                <div
+                  className="d-flex align-items-center justify-content-center bg-white"
+                  style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+                >
+                  <ArrowBackIosNewIcon style={{ color: "black" }} />
+                </div>
                 <span className="visually-hidden">Previous</span>
               </button>
               <button
                 className="carousel-control-next"
                 type="button"
-                data-bs-target="#carouselExample"
+                data-bs-target="#service-carousel"
                 data-bs-slide="next"
               >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
+                <div
+                  className="d-flex align-items-center justify-content-center bg-white"
+                  style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+                >
+                  <ArrowForwardIosIcon style={{ color: "black" }} />
+                </div>
                 <span className="visually-hidden">Next</span>
               </button>
+            </div>
+            <div className="d-flex">
+              {images.map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`service-img-${index}`}
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    objectFit: "cover",
+                    borderRadius: "5px",
+                  }}
+                  className="me-3 cursor-pointer"
+                  onClick={() => setSelectedImageIndex(index)}
+                />
+              ))}
             </div>
           </div>
           <div className="col-12 col-lg-4">

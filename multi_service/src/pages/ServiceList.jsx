@@ -4,9 +4,10 @@ import Pagination from "@mui/material/Pagination";
 import ServiceCard from "../components/ServiceCard";
 import Filter from "../components/Filter";
 
-import service1 from "../assets/service1.png";
-import service2 from "../assets/service2.png";
-import service3 from "../assets/service3.png";
+import service1 from "../assets/cleaning1.png";
+import service2 from "../assets/cleaning2.png";
+import service3 from "../assets/cleaning3.png";
+
 import profile from "../assets/profile.jpg";
 import profile1 from "../assets/profile1.jpg";
 
@@ -114,8 +115,8 @@ export default function ServiceList() {
   ];
 
   return (
-    <div style={{ backgroundColor: "#F7F7F7", color: "white" }}>
-      <div style={{ backgroundColor: "#000" }}>
+    <div style={{ backgroundColor: "#F7F7F7" }}>
+      <div style={{ backgroundColor: "#000", color: "white" }}>
         <div className="container py-5">
           <h1 style={{ fontWeight: "600" }}>Service List</h1>
         </div>
