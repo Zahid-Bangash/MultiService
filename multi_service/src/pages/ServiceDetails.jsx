@@ -6,9 +6,15 @@ import Done from "@mui/icons-material/Done";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 
+import job1 from "../assets/job1.png";
+import job2 from "../assets/job2.png";
+import job3 from "../assets/job3.png";
+
 export default function ServiceDetails() {
   const location = useLocation();
   const { service } = location.state;
+
+  const images = [job1, job2, job3];
 
   return (
     <div>
@@ -51,7 +57,50 @@ export default function ServiceDetails() {
       </div>
       <div className="container py-5">
         <div className="row">
-          <div className="col-12 col-lg-8 mb-4 mb-lg-0 bg-dark">1</div>
+          <div className="col-12 col-lg-8 mb-4 mb-lg-0">
+            <div
+              id="carouselExample"
+              className="carousel slide"
+              style={{ borderRadius: "10px" }}
+            >
+              <div className="carousel-inner" style={{ borderRadius: "10px" }}>
+                {images.map((img, index) => (
+                  <div key={index} className="carousel-item active">
+                    <img
+                      src={img}
+                      className="d-block w-100"
+                      alt="service-img"
+                      style={{ height: "446px", objectFit: "cover" }}
+                    />
+                  </div>
+                ))}
+              </div>
+              <button
+                className="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button
+                className="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExample"
+                data-bs-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
           <div className="col-12 col-lg-4">
             <div className="shadow p-4 mb-3" style={{ borderRadius: "10px" }}>
               <div
