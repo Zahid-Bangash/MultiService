@@ -5,7 +5,7 @@ export default function JobApply() {
 
   const dataChange = (e) => {
     const { name, value } = e.target;
-    if (name === "amount" && parseFloat(value) < 0) {
+    if (name === "amount" && parseFloat(value) < 1) {
       return;
     }
     setData({ ...data, [name]: value });

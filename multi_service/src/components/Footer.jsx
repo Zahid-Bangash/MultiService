@@ -65,8 +65,8 @@ export default function Footer() {
               <div className="col-12 col-sm-6 pt-3 mb-5">
                 <h5 className="mb-4">Quick Links</h5>
                 <div className="mb-3">
-                  <Link to="/" className="text-decoration-none text-white">
-                    Products
+                  <Link to="/faqs" className="text-decoration-none text-white">
+                    FAQs
                   </Link>
                 </div>
                 <div className="mb-3">

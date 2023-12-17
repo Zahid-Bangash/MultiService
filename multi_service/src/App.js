@@ -21,6 +21,7 @@ import JobDetails from "./pages/JobDetails";
 import JobApply from "./pages/JobApply";
 import CreateService from "./pages/CreateService";
 import ServiceDetails from "./pages/ServiceDetails";
+import FAQs from "./pages/FAQs";
 //import Loading from "../src/components/Loading";
 
 function App() {
@@ -55,6 +56,10 @@ function App() {
         {
           path: "/contact",
           element: <Contact />,
+        },
+        {
+          path: "/faqs",
+          element: <FAQs />,
         },
         {
           path: "/login",
