@@ -22,6 +22,7 @@ import JobApply from "./pages/JobApply";
 import CreateService from "./pages/CreateService";
 import ServiceDetails from "./pages/ServiceDetails";
 import FAQs from "./pages/FAQs";
+import ProvidersProfile from "./pages/ProvidersProfile";
 //import Loading from "../src/components/Loading";
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
         },
         {
           path: "/home",
-          element: <CreateService />,
+          element: <ProvidersProfile />,
         },
         {
           path: "/jobs/:title",
