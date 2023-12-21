@@ -5,10 +5,12 @@ import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineR
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import CircleIcon from "@mui/icons-material/Circle";
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 
 import ProviderServices from "../components/ProviderServices";
 import ProviderReviews from "../components/ProviderReviews";
 import AboutProvider from "../components/AboutProvider";
+import ProviderGallery from "./../components/ProviderGallery";
 
 import banner from "../assets/banner.png";
 import profile from "../assets/profile.jpg";
@@ -137,13 +139,13 @@ export default function ProvidersProfile() {
             </div>
             <div className="d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-md-start my-4">
               <div
-                className="primaryButton px-5 me-0 me-sm-2 mb-3 mb-sm-0"
+                className="primaryButton px-5 me-0 me-sm-3 mb-3 mb-sm-0"
                 style={{ width: "160px" }}
               >
                 Hire me
               </div>
               <div
-                className="secondaryButton px-5 me-0 me-sm-2 mb-3 mb-sm-0"
+                className="secondaryButton px-5 me-0 me-sm-3 mb-3 mb-sm-0"
                 style={{ width: "160px" }}
               >
                 Message
@@ -165,77 +167,274 @@ export default function ProvidersProfile() {
             </div>
           </div>
           <hr className="m-0" />
-          <div className="d-flex px-5">
+          <div className="tabs px-5">
+            <MenuOpenIcon
+              style={{ width: "50px", height: "50px" }}
+              className="d-lg-none cursor-pointer"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasResponsive"
+            />
+            {/* offcanvas */}
             <div
-              className={`py-3 me-5 cursor-pointer ${
-                activeTab === "services" ? "primary-color" : "text-secondary"
-              }`}
-              style={{
-                fontSize: "18px",
-                fontWeight: "600",
-                borderBottom:
-                  activeTab === "services"
-                    ? "2px solid #4c40ed"
-                    : "2px solid white",
-              }}
-              onClick={() => setActiveTab("services")}
+              className="offcanvas-lg offcanvas-start"
+              tabIndex="-1"
+              id="offcanvasResponsive"
+              aria-labelledby="offcanvasResponsiveLabel"
             >
-              Services
-            </div>
-            <div
-              className={`py-3 me-5 cursor-pointer ${
-                activeTab === "reviews" ? "primary-color" : "text-secondary"
-              }`}
-              style={{
-                fontSize: "18px",
-                fontWeight: "600",
-                borderBottom:
-                  activeTab === "reviews"
-                    ? "2px solid #4c40ed"
-                    : "2px solid white",
-              }}
-              onClick={() => setActiveTab("reviews")}
-            >
-              Reviews
-            </div>
-            <div
-              className={`py-3 me-5 cursor-pointer ${
-                activeTab === "about" ? "primary-color" : "text-secondary"
-              }`}
-              style={{
-                fontSize: "18px",
-                fontWeight: "600",
-                borderBottom:
-                  activeTab === "about"
-                    ? "2px solid #4c40ed"
-                    : "2px solid white",
-              }}
-              onClick={() => setActiveTab("about")}
-            >
-              About
-            </div>
-            <div
-              className={`py-3 me-5 cursor-pointer ${
-                activeTab === "gallery" ? "primary-color" : "text-secondary"
-              }`}
-              style={{
-                fontSize: "18px",
-                fontWeight: "600",
-                borderBottom:
-                  activeTab === "gallery"
-                    ? "2px solid #4c40ed"
-                    : "2px solid white",
-              }}
-              onClick={() => setActiveTab("gallery")}
-            >
-              Gallery
+              <div className="offcanvas-header">
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  data-bs-target="#offcanvasResponsive"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div className="offcanvas-body">
+                <div>
+                  <div
+                    className={`py-3 me-5 cursor-pointer d-inline-block ${
+                      activeTab === "services"
+                        ? "primary-color"
+                        : "text-secondary"
+                    }`}
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "600",
+                      borderBottom:
+                        activeTab === "services"
+                          ? "2px solid #4c40ed"
+                          : "2px solid white",
+                    }}
+                    onClick={() => setActiveTab("services")}
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasResponsive"
+                  >
+                    Services
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className={`py-3 me-5 cursor-pointer d-inline-block ${
+                      activeTab === "reviews"
+                        ? "primary-color"
+                        : "text-secondary"
+                    }`}
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "600",
+                      borderBottom:
+                        activeTab === "reviews"
+                          ? "2px solid #4c40ed"
+                          : "2px solid white",
+                    }}
+                    onClick={() => setActiveTab("reviews")}
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasResponsive"
+                  >
+                    Reviews
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className={`py-3 me-5 cursor-pointer d-inline-block ${
+                      activeTab === "about" ? "primary-color" : "text-secondary"
+                    }`}
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "600",
+                      borderBottom:
+                        activeTab === "about"
+                          ? "2px solid #4c40ed"
+                          : "2px solid white",
+                    }}
+                    onClick={() => setActiveTab("about")}
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasResponsive"
+                  >
+                    About
+                  </div>
+                </div>
+                <div>
+                  <div
+                    className={`py-3 me-5 cursor-pointer d-inline-block ${
+                      activeTab === "gallery"
+                        ? "primary-color"
+                        : "text-secondary"
+                    }`}
+                    style={{
+                      fontSize: "18px",
+                      fontWeight: "600",
+                      borderBottom:
+                        activeTab === "gallery"
+                          ? "2px solid #4c40ed"
+                          : "2px solid white",
+                    }}
+                    onClick={() => setActiveTab("gallery")}
+                    data-bs-dismiss="offcanvas"
+                    data-bs-target="#offcanvasResponsive"
+                  >
+                    Gallery
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="container py-5 px-0">
-          {activeTab === "services" && <ProviderServices />}
-          {activeTab === "reviews" && <ProviderReviews />}
-          {activeTab === "about" && <AboutProvider />}
+        <div className="row py-5">
+          <div className="col-12 col-lg-8 mb-5 mb-lg-0">
+            {activeTab === "services" && <ProviderServices />}
+            {activeTab === "reviews" && <ProviderReviews />}
+            {activeTab === "about" && <AboutProvider />}
+            {activeTab === "gallery" && <ProviderGallery />}
+          </div>
+          <div className="col-12 col-lg-4">
+            <div
+              className="shadow mb-4 p-4 bg-white"
+              style={{ borderRadius: "10px" }}
+            >
+              <div
+                className="mb-4"
+                style={{ fontSize: "24px", fontWeight: "500" }}
+              >
+                Business Hours
+              </div>
+              <div className="mb-3 d-flex justify-content-between">
+                <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                  Sunday:
+                </div>
+                <div className="text-secondary" style={{ fontSize: "16px" }}>
+                  Closed
+                </div>
+              </div>
+              <div className="mb-3 d-flex justify-content-between">
+                <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                  Monday:
+                </div>
+                <div className="text-secondary" style={{ fontSize: "16px" }}>
+                  10am to 6pm
+                </div>
+              </div>
+              <div className="mb-3 d-flex justify-content-between">
+                <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                  Tuesday:
+                </div>
+                <div className="text-secondary" style={{ fontSize: "16px" }}>
+                  10am to 6pm
+                </div>
+              </div>
+              <div className="mb-3 d-flex justify-content-between">
+                <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                  Wednesday:
+                </div>
+                <div className="text-secondary" style={{ fontSize: "16px" }}>
+                  10am to 6pm
+                </div>
+              </div>
+              <div className="mb-3 d-flex justify-content-between">
+                <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                  Thursday:
+                </div>
+                <div className="text-secondary" style={{ fontSize: "16px" }}>
+                  10am to 6pm
+                </div>
+              </div>
+              <div className="mb-3 d-flex justify-content-between">
+                <div style={{ fontSize: "16px", fontWeight: "500" }}>
+                  Saturday:
+                </div>
+                <div className="text-secondary" style={{ fontSize: "16px" }}>
+                  7am to 2pm
+                </div>
+              </div>
+            </div>
+            <div
+              className="shadow p-4"
+              style={{ borderRadius: "10px", backgroundColor: "white" }}
+            >
+              <div
+                className="mb-4"
+                style={{ fontSize: "24px", fontWeight: "500" }}
+              >
+                Share Profile
+              </div>
+              <div className="d-flex">
+                <div
+                  className="me-2 cursor-pointer"
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "#1877F2",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      backgroundColor: "white",
+                      borderRadius: "50%",
+                      width: "16px",
+                      height: "16px",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <i
+                      className="fa fa-facebook"
+                      style={{ color: "#1877F2", marginTop: "2px" }}
+                    ></i>
+                  </div>
+                </div>
+                <div
+                  className="me-2 cursor-pointer"
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "#1DA1F2",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <i className="fa fa-twitter" style={{ color: "white" }}></i>
+                </div>
+                <div
+                  className="me-2 cursor-pointer"
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "#2867B2",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <i className="fa fa-linkedin" style={{ color: "white" }}></i>
+                </div>
+                <div
+                  className="cursor-pointer"
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    backgroundColor: "#FF0000",
+                    borderRadius: "50%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <i
+                    className="fa fa-youtube-play"
+                    style={{ color: "white" }}
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
