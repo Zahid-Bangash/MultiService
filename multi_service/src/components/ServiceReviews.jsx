@@ -43,10 +43,7 @@ export default function ServiceReviews() {
   ];
 
   return (
-    <div className="py-5">
-      <div className="mb-5" style={{ fontSize: "20px", fontWeight: "600" }}>
-        Reviews
-      </div>
+    <div>
       {reviews.map((review, index) => (
         <ServiceReviewCard key={index} review={review} />
       ))}

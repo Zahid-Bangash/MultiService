@@ -8,14 +8,14 @@ import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineR
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
-import AboutService from "../components/AboutService";
+import ServiceDetails from "../components/ServiceDetails";
 import ServiceReviews from "../components/ServiceReviews";
 
 import cleaning1 from "../assets/cleaning1.png";
 import cleaning2 from "../assets/cleaning2.png";
 import cleaning3 from "../assets/cleaning3.png";
 
-export default function ServiceDetails() {
+export default function Service() {
   const location = useLocation();
   const { service } = location.state;
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -165,8 +165,10 @@ export default function ServiceDetails() {
               </div>
             </div>
             <hr style={{ margin: "-2px 0" }} />
-            {activeTab === "details" && <AboutService />}
-            {activeTab === "reviews" && <ServiceReviews />}
+            <div className="py-5">
+              {activeTab === "details" && <ServiceDetails />}
+              {activeTab === "reviews" && <ServiceReviews />}
+            </div>
           </div>
           <div className="col-12 col-lg-4">
             <div className="shadow p-4 mb-3" style={{ borderRadius: "10px" }}>

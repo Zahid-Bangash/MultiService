@@ -8,6 +8,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 
 import ProviderServices from "../components/ProviderServices";
 import ProviderReviews from "../components/ProviderReviews";
+import AboutProvider from "../components/AboutProvider";
 
 import banner from "../assets/banner.png";
 import profile from "../assets/profile.jpg";
@@ -234,6 +235,7 @@ export default function ProvidersProfile() {
         <div className="container py-5 px-0">
           {activeTab === "services" && <ProviderServices />}
           {activeTab === "reviews" && <ProviderReviews />}
+          {activeTab === "about" && <AboutProvider />}
         </div>
       </div>
     </div>

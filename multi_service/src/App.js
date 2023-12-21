@@ -20,7 +20,7 @@ import JobList from "./pages/JobList";
 import JobDetails from "./pages/JobDetails";
 import JobApply from "./pages/JobApply";
 import CreateService from "./pages/CreateService";
-import ServiceDetails from "./pages/ServiceDetails";
+import Service from "./pages/Service";
 import FAQs from "./pages/FAQs";
 import ProvidersProfile from "./pages/ProvidersProfile";
 //import Loading from "../src/components/Loading";
@@ -48,7 +48,7 @@ function App() {
         },
         {
           path: "/services/:title",
-          element: <ServiceDetails />,
+          element: <Service />,
         },
         {
           path: "/apply-for-job",

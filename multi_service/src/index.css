@@ -216,7 +216,7 @@ code {
 
 .create-service-controls {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .back-button-margin {
