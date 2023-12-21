@@ -16,20 +16,27 @@ export default function ProvidersProfile() {
             alt="banner"
             style={{ width: "100%", borderRadius: "10px 10px 0 0" }}
           />
-          <div className="d-flex align-items-end">
-            <img
-              src={profile}
-              alt="profile"
-              style={{
-                width: "150px",
-                height: "150px",
-                borderRadius: "50%",
-                border: "5px solid white",
-              }}
-              className="me-4"
-            />
-            <div>
-              <div className="d-flex align-items-center">
+          <div
+            className="d-flex flex-column flex-sm-row align-items-center align-items-sm-end"
+            style={{ marginTop: "-60px", marginBottom: "60px" }}
+          >
+            <div className="position-relative me-sm-3 mb-3 mb-sm-0">
+              <img
+                src={profile}
+                alt="profile"
+                style={{
+                  width: "150px",
+                  height: "150px",
+                  borderRadius: "50%",
+                  border: "5px solid white",
+                }}
+              />
+            </div>
+            <div
+              className="d-flex flex-column"
+              style={{ marginBottom: "-40px" }}
+            >
+              <div className="d-flex align-items-center justify-content-center justify-content-sm-start mb-3">
                 <div
                   className="me-3"
                   style={{ fontSize: "24px", fontWeight: "600" }}
@@ -44,7 +51,7 @@ export default function ProvidersProfile() {
                   (24)
                 </div>
               </div>
-              <div className="d-flex">
+              <div className="d-flex justify-content-center justify-content-sm-start mb-3">
                 <div
                   className="text-secondary py-1 px-2 me-2"
                   style={{
@@ -76,23 +83,33 @@ export default function ProvidersProfile() {
                   Office Repair
                 </div>
               </div>
-              <div className="d-flex" style={{ fontSize: "14px" }}>
-                <div className="d-flex align-items-center text-secondary">
+              <div
+                className="d-flex justify-content-center justify-content-sm-start text-secondary"
+                style={{ fontSize: "14px" }}
+              >
+                <div className="d-flex align-items-center me-4">
                   <FmdGoodOutlinedIcon
-                    className="me-2"
+                    className="me-1"
                     style={{ width: "20px", height: "20px" }}
                   />
                   New York, USA
                 </div>
-                <div className="d-flex align-items-center text-secondary">
+                <div className="d-flex align-items-center">
                   <ChatBubbleOutlineRoundedIcon
-                    className="me-2"
-                    style={{ width: "20px", height: "20px" }}
+                    className="me-1"
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      marginBottom: "-3px",
+                    }}
                   />
-                  English, Spanish
+                  <div>English, Spanish</div>
                 </div>
               </div>
             </div>
+          </div>
+          <div className="d-flex my-4">
+            <div className="primaryButton px-5">Hire me</div>
           </div>
         </div>
       </div>
