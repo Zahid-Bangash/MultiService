@@ -4,6 +4,10 @@ import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import ChatBubbleOutlineRoundedIcon from "@mui/icons-material/ChatBubbleOutlineRounded";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
+import CircleIcon from "@mui/icons-material/Circle";
+
+import ProviderServices from "../components/ProviderServices";
+import ProviderReviews from "../components/ProviderReviews";
 
 import banner from "../assets/banner.png";
 import profile from "../assets/profile.jpg";
@@ -21,12 +25,12 @@ export default function ProvidersProfile() {
             alt="banner"
             style={{ width: "100%", borderRadius: "10px 10px 0 0" }}
           />
-          <div className="px-0 px-sm-5">
+          <div className="px-0 px-md-5">
             <div
-              className="d-flex flex-column flex-sm-row align-items-center align-items-sm-end"
+              className="d-flex flex-column flex-md-row align-items-center align-items-md-end"
               style={{ marginTop: "-60px", marginBottom: "60px" }}
             >
-              <div className="position-relative me-sm-3 mb-3 mb-sm-0">
+              <div className="position-relative me-md-3 mb-3 mb-md-0">
                 <img
                   src={profile}
                   alt="profile"
@@ -37,12 +41,28 @@ export default function ProvidersProfile() {
                     border: "5px solid white",
                   }}
                 />
+                <div
+                  style={{
+                    color: "rgba(34, 180, 75, 1)",
+                    position: "absolute",
+                    bottom: 15,
+                    right: 5,
+                    padding: "3px",
+                    backgroundColor: "white",
+                    borderRadius: "50%",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <CircleIcon />
+                </div>
               </div>
               <div
                 className="d-flex flex-column"
                 style={{ marginBottom: "-40px" }}
               >
-                <div className="d-flex align-items-center justify-content-center justify-content-sm-start mb-3">
+                <div className="d-flex align-items-center justify-content-center justify-content-md-start mb-3">
                   <div
                     className="me-3"
                     style={{ fontSize: "24px", fontWeight: "600" }}
@@ -57,7 +77,7 @@ export default function ProvidersProfile() {
                     (24)
                   </div>
                 </div>
-                <div className="d-flex justify-content-center justify-content-sm-start mb-3">
+                <div className="d-flex justify-content-center justify-content-md-start mb-3">
                   <div
                     className="text-secondary py-1 px-2 me-2"
                     style={{
@@ -90,7 +110,7 @@ export default function ProvidersProfile() {
                   </div>
                 </div>
                 <div
-                  className="d-flex justify-content-center justify-content-sm-start text-secondary"
+                  className="d-flex justify-content-center justify-content-md-start text-secondary"
                   style={{ fontSize: "14px" }}
                 >
                   <div className="d-flex align-items-center me-4">
@@ -114,9 +134,19 @@ export default function ProvidersProfile() {
                 </div>
               </div>
             </div>
-            <div className="d-flex justify-content-center justify-content-sm-start my-4">
-              <div className="primaryButton px-5 me-2">Hire me</div>
-              <div className="secondaryButton px-5 me-2">Message</div>
+            <div className="d-flex flex-column flex-sm-row align-items-center justify-content-center justify-content-md-start my-4">
+              <div
+                className="primaryButton px-5 me-0 me-sm-2 mb-3 mb-sm-0"
+                style={{ width: "160px" }}
+              >
+                Hire me
+              </div>
+              <div
+                className="secondaryButton px-5 me-0 me-sm-2 mb-3 mb-sm-0"
+                style={{ width: "160px" }}
+              >
+                Message
+              </div>
               <div
                 className="secondaryButton p-2"
                 onClick={() => setIsFav(!isFav)}
@@ -200,6 +230,10 @@ export default function ProvidersProfile() {
               Gallery
             </div>
           </div>
+        </div>
+        <div className="container py-5 px-0">
+          {activeTab === "services" && <ProviderServices />}
+          {activeTab === "reviews" && <ProviderReviews />}
         </div>
       </div>
     </div>

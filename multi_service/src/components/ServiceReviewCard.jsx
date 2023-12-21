@@ -4,7 +4,10 @@ import StarIcon from "@mui/icons-material/Star";
 
 export default function ServiceReviewCard({ review }) {
   return (
-    <div className="shadow p-4 mb-4" style={{ borderRadius: "10px" }}>
+    <div
+      className="shadow p-4 mb-4"
+      style={{ borderRadius: "10px", backgroundColor: "white" }}
+    >
       <div className="d-flex review-justify align-items-center mb-3">
         <img
           src={review.img}
