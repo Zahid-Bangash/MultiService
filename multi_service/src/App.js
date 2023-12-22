@@ -23,6 +23,7 @@ import CreateService from "./pages/CreateService";
 import Service from "./pages/Service";
 import FAQs from "./pages/FAQs";
 import ProvidersProfile from "./pages/ProvidersProfile";
+import PlaceBid from "./pages/PlaceBid";
 //import Loading from "../src/components/Loading";
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
         },
         {
           path: "/home",
-          element: <ProvidersProfile />,
+          element: <PlaceBid />,
         },
         {
           path: "/jobs/:title",
