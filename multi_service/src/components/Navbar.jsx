@@ -66,10 +66,10 @@ export default function Navbar() {
       id="navbar"
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          <h3 style={{ fontWeight: "600" }}>
-            Multi<span>service</span>
-          </h3>
+        <Link className="navbar-brand me-5" to="/">
+          <div style={{ fontSize: "36px", fontWeight: "600", padding: "8px" }}>
+            Multi<span style={{ fontWeight: "300" }}>service</span>
+          </div>
         </Link>
         <button
           className="navbar-toggler"
@@ -89,8 +89,16 @@ export default function Navbar() {
         >
           <div className="offcanvas-header">
             <div data-bs-dismiss="offcanvas">
-              <Link className="navbar-brand p-0" to="/">
-                <h3>Multiservice</h3>
+              <Link className="navbar-brand d-flex" to="/">
+                <div
+                  style={{
+                    fontSize: "36px",
+                    fontWeight: "600",
+                    padding: "8px",
+                  }}
+                >
+                  Multi<span style={{ fontWeight: "300" }}>service</span>
+                </div>
               </Link>
             </div>
             <button
@@ -104,7 +112,7 @@ export default function Navbar() {
             <ul className="navbar-nav justify-content-start flex-grow-1 pe-3">
               <li className="nav-item" data-bs-dismiss="offcanvas">
                 <NavLink
-                  className="nav-link fw-bold"
+                  className="nav-link fw-medium"
                   aria-current="page"
                   to="/home"
                 >
@@ -113,7 +121,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item" data-bs-dismiss="offcanvas">
                 <NavLink
-                  className="nav-link fw-bold"
+                  className="nav-link fw-medium"
                   aria-current="page"
                   to="/set-up-my-business"
                 >
@@ -121,7 +129,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item" data-bs-dismiss="offcanvas">
-                <NavLink className="nav-link fw-bold" to="/contact">
+                <NavLink className="nav-link fw-medium" to="/contact">
                   Contact
                 </NavLink>
               </li>
@@ -190,14 +198,7 @@ export default function Navbar() {
 
             <div className="right d-flex align-items-center">
               <div data-bs-dismiss="offcanvas">
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive
-                      ? "registerButton fw-bold me-4 cursor-pointer text-decoration-none registerButtonActive"
-                      : "registerButton fw-bold me-4 cursor-pointer text-decoration-none"
-                  }
-                  to="/register"
-                >
+                <NavLink className="nav-link fw-medium me-4" to="/register">
                   Register
                 </NavLink>
               </div>
