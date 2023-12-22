@@ -61,12 +61,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg bg-white px-lg-5 fixed-top"
+      className="navbar navbar-expand-lg bg-white fixed-top"
       style={{ boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)" }}
       id="navbar"
     >
-      <div className="container-fluid">
-        <Link className="navbar-brand me-5" to="/">
+      <div className="container-fluid px-0 px-sm-2 px-lg-5">
+        <Link className="navbar-brand me-0 me-lg-5" to="/">
           <div style={{ fontSize: "36px", fontWeight: "600", padding: "8px" }}>
             Multi<span style={{ fontWeight: "300" }}>service</span>
           </div>

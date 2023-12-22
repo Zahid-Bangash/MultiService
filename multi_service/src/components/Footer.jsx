@@ -14,9 +14,15 @@ export default function Footer() {
         <div className="row py-5">
           <div className="col-12 col-lg-6 mb-5">
             <Link to="/" className="text-decoration-none text-white">
-              <h1 className="mb-3" style={{ fontWeight: "600" }}>
+              <div
+                style={{
+                  fontSize: "36px",
+                  fontWeight: "600",
+                  marginBottom: "9px",
+                }}
+              >
                 Multi<span style={{ fontWeight: "300" }}>service</span>
-              </h1>
+              </div>
             </Link>
             <p className="mb-4" style={{ lineHeight: "26px" }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis

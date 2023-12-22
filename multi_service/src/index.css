@@ -171,7 +171,7 @@ code {
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 460px) {
     .flex {
         display: flex;
         flex-direction: column;
@@ -179,11 +179,11 @@ code {
     }
 
     .app-width {
-        width: 195.63px;
+        width: 209px;
     }
 }
 
-@media screen and (min-width:431px) {
+@media screen and (min-width:461px) {
     .app-margin {
         margin-right: 20px;
     }
@@ -246,6 +246,26 @@ code {
 
 .zoom-range {
     width: 100%;
+}
+
+@media (min-width:576px) {
+    .bid-timeline {
+        width: 75% !important;
+    }
+
+    .bid-timeline-type {
+        width: 25% !important;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .bid-timeline {
+        width: 70% !important;
+    }
+
+    .bid-timeline-type {
+        width: 30% !important;
+    }
 }
 
 /* .......................................................................................................... */
